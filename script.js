@@ -16,10 +16,18 @@ adicionarTarefa();
 
 function clickTarefas() {
   const list = document.getElementById('lista-tarefas').children;
+  const selected = document.getElementsByClassName('colorB');
 
   for (let index = 0; index < list.length; index += 1) {
     list[index].addEventListener('click', function (event) {
-      event.target.style.backgroundColor = 'gray';
+      event.target.className = 'colorB';
+      if (selected.length > 1) {
+        selected[0].classList.remove('colorB');
+      }
+      event.target.className = 'colorB';
+      if (selected.length > 1) {
+        selected[1].classList.remove('colorB');
+      }
     });
   }
 }
