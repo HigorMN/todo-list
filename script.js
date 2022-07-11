@@ -8,7 +8,18 @@ function adicionarTarefa() {
     createLi.innerText = text.value;
     list.appendChild(createLi);
     text.value = '';
+    clickTarefas();
   });
 }
 
 adicionarTarefa();
+
+function clickTarefas() {
+  const list = document.getElementById('lista-tarefas').children;
+
+  for (let index = 0; index < list.length; index += 1) {
+    list[index].addEventListener('click', function (event) {
+      event.target.style.backgroundColor = 'gray';
+    });
+  }
+}
