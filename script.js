@@ -92,25 +92,32 @@ carregar();
 
 function moverCima() {
   const selected = document.querySelector('.colorB');
-  if (selected === null || selected.previousElementSibling === null){
-    alert('Não foi possivel mover')
+  if (selected === null || selected.previousElementSibling === null) {
+    alert('Não foi possivel mover');
   } else {
     selected.previousElementSibling.before(selected);
   }
 }
 
 const cima = document.getElementById('mover-cima');
-cima.addEventListener('click', moverCima)
+cima.addEventListener('click', moverCima);
 
 function moverBaixo() {
   const selected = document.querySelector('.colorB');
-  if (selected === null || selected.nextElementSibling === null){
-    alert('Não foi possivel mover')
+  if (selected === null || selected.nextElementSibling === null) {
+    alert('Não foi possivel mover');
   } else {
     selected.nextElementSibling.after(selected);
   }
 }
 
 const baixo = document.getElementById('mover-baixo');
-baixo.addEventListener('click', moverBaixo)
+baixo.addEventListener('click', moverBaixo);
 
+function removerSelec() {
+  const selected = document.querySelector('.colorB');
+  selected.remove();
+}
+
+const selecionado = document.getElementById('remover-selecionado');
+selecionado.addEventListener('click', removerSelec);
