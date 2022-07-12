@@ -42,3 +42,14 @@ function clickTarefas() {
     });
   }
 }
+
+function clear() {
+  const apagar = document.getElementById('apaga-tudo');
+  const list = document.getElementById('lista-tarefas');
+
+  apagar.addEventListener('click', function (){
+    list.innerHTML = '';
+  })
+}
+
+clear();
