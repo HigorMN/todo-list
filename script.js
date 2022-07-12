@@ -47,9 +47,23 @@ function clear() {
   const apagar = document.getElementById('apaga-tudo');
   const list = document.getElementById('lista-tarefas');
 
-  apagar.addEventListener('click', function (){
+  apagar.addEventListener('click', function () {
     list.innerHTML = '';
-  })
+  });
 }
 
 clear();
+
+function removeSelec() {
+  const selected = document.getElementsByClassName('completed');
+  const remove = document.getElementById('remover-finalizados');
+
+  remove.addEventListener('click', function () {
+    for(let index = 0; index < selected.length; index += 1){
+      selected[index].remove();
+      selected[index].remove();
+    }
+  });
+}
+
+removeSelec();
