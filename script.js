@@ -59,7 +59,7 @@ function removeSelec() {
   const remove = document.getElementById('remover-finalizados');
 
   remove.addEventListener('click', function () {
-    for(let index = 0; index < selected.length; index += 1){
+    for (let index = 0; index < selected.length; index += 1) {
       selected[index].remove();
       selected[index].remove();
     }
@@ -67,3 +67,25 @@ function removeSelec() {
 }
 
 removeSelec();
+
+function save() {
+  const btnSave = document.getElementById('salvar-tarefas');
+
+  btnSave.addEventListener('click', function () {
+    localStorage.lista = document.getElementById('lista-tarefas').innerHTML;
+  });
+}
+
+save();
+
+function carregar(){
+  const valor = localStorage.getItem("lista");
+  const local = document.getElementById('lista-tarefas');
+  local.innerHTML = valor;
+  removeSelec();
+  clear();
+  dblCl();
+  clickTarefas();
+}
+
+carregar();
