@@ -78,8 +78,8 @@ function save() {
 
 save();
 
-function carregar(){
-  const valor = localStorage.getItem("lista");
+function carregar() {
+  const valor = localStorage.getItem('lista');
   const local = document.getElementById('lista-tarefas');
   local.innerHTML = valor;
   removeSelec();
@@ -89,3 +89,28 @@ function carregar(){
 }
 
 carregar();
+
+function moverCima() {
+  const selected = document.querySelector('.colorB');
+  if (selected === null || selected.previousElementSibling === null){
+    alert('Não foi possivel mover')
+  } else {
+    selected.previousElementSibling.before(selected);
+  }
+}
+
+const cima = document.getElementById('mover-cima');
+cima.addEventListener('click', moverCima)
+
+function moverBaixo() {
+  const selected = document.querySelector('.colorB');
+  if (selected === null || selected.nextElementSibling === null){
+    alert('Não foi possivel mover')
+  } else {
+    selected.nextElementSibling.after(selected);
+  }
+}
+
+const baixo = document.getElementById('mover-baixo');
+baixo.addEventListener('click', moverBaixo)
+
