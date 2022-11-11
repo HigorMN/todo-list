@@ -1,4 +1,4 @@
-<h1 align="center">Projeto - Todo Linst</h1><br />
+<h1 align="center">Projeto - Lista de Tarefas</h1><br />
 
 - 👨‍💻 O que foi desenvolvido<br />
 
